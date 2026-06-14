@@ -1,0 +1,7 @@
+# Terraform ignores
+.terraform/
+*.tfstate
+*.tfstate.backup
+.env
+.terraform-cli-data
+terraform.tfvars
