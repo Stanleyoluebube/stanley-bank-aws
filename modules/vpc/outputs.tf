@@ -13,3 +13,7 @@ output "public_subnets" {
 output "vpc_cidr" {
   value = module.vpc.vpc_cidr_block
 }
+
+output "alb_dns_name" {
+  value = aws_lb.main.dns_name
+}

@@ -4,5 +4,5 @@ resource "aws_route53_record" "ns" {
   name    = "ns${count.index + 1}.stanleybank.com"
   type    = "A"
   ttl     = "300"
-  records = ["TBD_NAMECHEAP_IP"]
+  records = [var.namecheap_ips[count.index]]
 }

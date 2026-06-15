@@ -5,9 +5,10 @@ module "vpc" {
   name = "stanley-bank-vpc"
   cidr = var.vpc_cidr
 
-  azs             = ["eu-north-1a", "eu-north-1b"]
-  private_subnets = var.private_subnets
+  azs             = var.azs
   public_subnets  = var.public_subnets
+  private_subnets = var.private_subnets
+  database_subnets = ["10.0.100.0/24", "10.0.101.0/24"]
 
   enable_nat_gateway = true
   single_nat_gateway = true

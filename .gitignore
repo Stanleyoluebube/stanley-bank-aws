@@ -5,3 +5,5 @@
 .env
 .terraform-cli-data
 terraform.tfvars
+.terraform-lock.hcl
+*.tfvars.json

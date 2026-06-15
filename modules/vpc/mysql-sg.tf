@@ -1,7 +1,7 @@
 resource "aws_security_group" "mysql_sg" {
   name        = "stanley-bank-mysql-sg"
   description = "Allow MySQL traffic from EKS nodes"
-  vpc_id      = var.vpc_id
+  vpc_id      = module.vpc.vpc_id
 
   ingress {
     from_port   = 3306
