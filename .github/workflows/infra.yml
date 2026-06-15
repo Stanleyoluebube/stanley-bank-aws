@@ -2,14 +2,13 @@ name: Infrastructure Provisioning
 on:
   push:
     branches: [ main ]
-    paths: [ 'stanley-bank-aws/**' ]
 
 jobs:
   terraform:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./stanley-bank-aws
+        working-directory: .
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
