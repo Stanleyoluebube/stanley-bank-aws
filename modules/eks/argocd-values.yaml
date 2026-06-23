@@ -1,8 +1,0 @@
-# ArgoCD Values for Helm installation
-server:
-  ingress:
-    enabled: true
-    hostname: argocd.stanleybank.com
-    ingressClassName: nginx
-spec:
-  replicaCount: 1

@@ -1,0 +1,7 @@
+# Ingress-Nginx Helm values — keep the default config but expose via NLB.
+controller:
+  service:
+    type: LoadBalancer
+    annotations:
+      service.beta.kubernetes.io/aws-load-balancer-type: nlb
+      service.beta.kubernetes.io/aws-load-balancer-scheme: internet-facing

@@ -1,9 +1,17 @@
 # Terraform ignores
 .terraform/
+.terraform.tfstate.lock.info
 *.tfstate
 *.tfstate.backup
 .env
 .terraform-cli-data
 terraform.tfvars
-.terraform-lock.hcl
 *.tfvars.json
+
+# DO NOT ignore .terraform.lock.hcl — it pins provider versions across
+# team/CI and MUST be committed so `terraform init` is reproducible.
+
+# Local-only files
+alb-iam.json
+tfplan
+tfplan.json

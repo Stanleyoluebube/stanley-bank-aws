@@ -1,0 +1,26 @@
+# Placeholder for ArgoCD application-set / repo-creds encryption key.
+#
+# ArgoCD can encrypt sensitive values stored in its own config (e.g.
+# webhook tokens, repo credentials) using a key you supply here.
+#
+# Generate a real key with:
+#   openssl rand -base64 32
+#
+# Then either:
+#   - inject it via Kubernetes Secret (recommended), or
+#   - paste the base64 value below and load via helm value.
+#
+# For Stanley Bank we do NOT use any ArgoCD-side encryption features
+# yet — this file is kept here as a documented placeholder so the
+# "encryption.json" item in the original spec is satisfied.
+{
+  "kind": "Secret",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "argocd-secret-key",
+    "namespace": "argocd"
+  },
+  "stringData": {
+    "secret-key": "REPLACE_ME_WITH_OPENSSL_RAND_BASE64_32"
+  }
+}
