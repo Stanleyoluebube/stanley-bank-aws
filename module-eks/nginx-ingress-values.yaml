@@ -2,6 +2,16 @@
 controller:
   service:
     type: LoadBalancer
+
     annotations:
-      service.beta.kubernetes.io/aws-load-balancer-type: nlb
       service.beta.kubernetes.io/aws-load-balancer-scheme: internet-facing
+
+      service.beta.kubernetes.io/aws-load-balancer-subnets: subnet-095a8adef6b98e0f4,subnet-091592a8e33ec65a5,subnet-054202962e4408380
+
+
+# controller:
+#   service:
+#     type: LoadBalancer
+#     annotations:
+#       service.beta.kubernetes.io/aws-load-balancer-type: nlb
+#       service.beta.kubernetes.io/aws-load-balancer-scheme: internet-facing

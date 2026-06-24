@@ -27,7 +27,7 @@ resource "helm_release" "ingress_nginx" {
   chart            = "ingress-nginx"
   namespace        = "ingress-nginx"
   create_namespace = true
-  version          = "4.10.1"
+  version          = "4.15.1"
 
   set {
     name  = "controller.service.type"
