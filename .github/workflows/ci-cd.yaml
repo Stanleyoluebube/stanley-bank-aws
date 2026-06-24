@@ -45,12 +45,12 @@ jobs:
       #   # You apply locally with `terraform apply` once you've reviewed the plan.
       #   run: terraform plan -no-color -lock-timeout=5m -out=tfplan
 
-      - name: terraform plan
-        run: terraform plan -no-color -lock=false -out=tfplan
+      # - name: terraform plan
+      #   run: terraform plan -no-color -lock=false -out=tfplan
 
-      - name: upload plan artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: tfplan
-          path: tfplan
-          retention-days: 7
+      # - name: upload plan artifact
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: tfplan
+      #     path: tfplan
+      #     retention-days: 7
