@@ -1,0 +1,48 @@
+region       = "us-east-2"
+domain_name  = "example.com"
+cluster_name = "stanley-bank-eks"
+
+vpc_cidr = "10.0.0.0/16"
+
+public_subnet_cidrs = [
+  "10.0.1.0/24",
+  "10.0.2.0/24",
+  "10.0.3.0/24"
+]
+
+private_subnet_cidrs = [
+  "10.0.10.0/24",
+  "10.0.11.0/24",
+  "10.0.12.0/24"
+]
+
+db_subnet_cidrs = [
+  "10.0.20.0/24",
+  "10.0.21.0/24"
+]
+
+availability_zones = [
+  "us-east-2a",
+  "us-east-2b",
+  "us-east-2c"
+]
+
+node_instance_type = "t3.large"
+node_disk_size     = 40
+node_desired_size  = 3
+node_min_size      = 2
+node_max_size      = 6
+
+db_instance_class    = "db.t3.medium"
+db_allocated_storage = 40
+db_engine_version    = "16.14"
+
+db_username = "replace-me"
+db_password = "replace-me"
+db_name     = "replace-me"
+
+db_multi_az = true
+
+cluster_endpoint_public_access       = true
+cluster_endpoint_public_access_cidrs = ["0.0.0.0/0"]
+cluster_endpoint_private_access      = true
