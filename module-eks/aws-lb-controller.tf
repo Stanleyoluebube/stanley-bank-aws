@@ -45,11 +45,11 @@ resource "kubernetes_service_account" "aws_lb_controller" {
 }
 
 resource "helm_release" "aws_load_balancer_controller" {
-  name             = "aws-load-balancer-controller"
-  repository       = "https://aws.github.io/eks-charts"
-  chart            = "aws-load-balancer-controller"
-  namespace        = "kube-system"
-  version          = "1.7.1"
+  name       = "aws-load-balancer-controller"
+  repository = "https://aws.github.io/eks-charts"
+  chart      = "aws-load-balancer-controller"
+  namespace  = "kube-system"
+  version    = "1.7.1"
 
   set {
     name  = "clusterName"

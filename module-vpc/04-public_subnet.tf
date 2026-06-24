@@ -6,8 +6,8 @@ resource "aws_subnet" "public" {
   map_public_ip_on_launch = true
 
   tags = {
-    Name                              = "stanley-bank-public-${var.availability_zones[count.index]}"
-    "kubernetes.io/role/elb"          = "1"
+    Name                                     = "stanley-bank-public-${var.availability_zones[count.index]}"
+    "kubernetes.io/role/elb"                 = "1"
     "kubernetes.io/cluster/stanley-bank-eks" = "owned"
   }
 }

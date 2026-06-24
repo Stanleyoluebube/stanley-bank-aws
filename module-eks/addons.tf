@@ -74,11 +74,11 @@ resource "kubernetes_service_account" "ebs_csi" {
 }
 
 resource "helm_release" "aws_ebs_csi_driver" {
-  name             = "aws-ebs-csi-driver"
-  repository       = "https://kubernetes-sigs.github.io/aws-ebs-csi-driver"
-  chart            = "aws-ebs-csi-driver"
-  namespace        = "kube-system"
-  version          = "2.30.0"
+  name       = "aws-ebs-csi-driver"
+  repository = "https://kubernetes-sigs.github.io/aws-ebs-csi-driver"
+  chart      = "aws-ebs-csi-driver"
+  namespace  = "kube-system"
+  version    = "2.30.0"
 
   set {
     name  = "controller.serviceAccount.create"

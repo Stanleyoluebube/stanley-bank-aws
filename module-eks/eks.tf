@@ -46,7 +46,7 @@ data "tls_certificate" "eks_oidc" {
 
 resource "aws_iam_openid_connect_provider" "eks" {
   client_id_list  = ["sts.${data.aws_partition.current.dns_suffix}"]
-  thumbprint_list  = [data.tls_certificate.eks_oidc.certificates[0].sha1_fingerprint]
+  thumbprint_list = [data.tls_certificate.eks_oidc.certificates[0].sha1_fingerprint]
   url             = aws_eks_cluster.stanley_bank.identity[0].oidc[0].issuer
   tags = {
     Name = "${var.cluster_name}-irsa"

@@ -25,15 +25,15 @@ module "eks" {
 
   cluster_name = var.cluster_name
 
-  vpc_id                  = module.vpc.vpc_id
-  public_subnet_ids       = module.vpc.public_subnet_ids
-  private_subnet_ids      = module.vpc.private_subnet_ids
+  vpc_id             = module.vpc.vpc_id
+  public_subnet_ids  = module.vpc.public_subnet_ids
+  private_subnet_ids = module.vpc.private_subnet_ids
 
-  node_instance_type      = var.node_instance_type
-  node_disk_size          = var.node_disk_size
-  node_desired_size       = var.node_desired_size
-  node_min_size           = var.node_min_size
-  node_max_size           = var.node_max_size
+  node_instance_type = var.node_instance_type
+  node_disk_size     = var.node_disk_size
+  node_desired_size  = var.node_desired_size
+  node_min_size      = var.node_min_size
+  node_max_size      = var.node_max_size
 
   cluster_endpoint_public_access       = var.cluster_endpoint_public_access
   cluster_endpoint_public_access_cidrs = var.cluster_endpoint_public_access_cidrs
@@ -44,8 +44,8 @@ module "eks" {
 module "database" {
   source = "./module-database"
 
-  vpc_id             = module.vpc.vpc_id
-  db_subnet_ids      = module.vpc.db_subnet_ids
+  vpc_id               = module.vpc.vpc_id
+  db_subnet_ids        = module.vpc.db_subnet_ids
   db_security_group_id = module.vpc.db_security_group_id
 
   db_instance_class    = var.db_instance_class

@@ -5,14 +5,14 @@ resource "aws_eks_node_group" "stanley_bank" {
   subnet_ids      = var.private_subnet_ids
 
   # Per project spec
-  instance_types = [var.node_instance_type]   # t3.large
-  disk_size      = var.node_disk_size          # 40 GiB
+  instance_types = [var.node_instance_type] # t3.large
+  disk_size      = var.node_disk_size       # 40 GiB
   capacity_type  = "ON_DEMAND"
 
   scaling_config {
-    desired_size = var.node_desired_size  # 3
-    min_size     = var.node_min_size      # 2
-    max_size     = var.node_max_size      # 6
+    desired_size = var.node_desired_size # 3
+    min_size     = var.node_min_size     # 2
+    max_size     = var.node_max_size     # 6
   }
 
   update_config {

@@ -27,11 +27,11 @@ terraform {
 
 
 
- # DynamoDB table for state locking.
-    # Create it once with:
-    #   aws dynamodb create-table \
-    #     --table-name stanley-bank-tf-lock \
-    #     --attribute-definitions AttributeName=LockID,AttributeType=S \
-    #     --key-schema AttributeName=LockID,KeyType=HASH \
-    #     --billing-mode PAY_PER_REQUEST \
-    #     --region us-east-2
+# DynamoDB table for state locking.
+# Create it once with:
+#   aws dynamodb create-table \
+#     --table-name stanley-bank-tf-lock \
+#     --attribute-definitions AttributeName=LockID,AttributeType=S \
+#     --key-schema AttributeName=LockID,KeyType=HASH \
+#     --billing-mode PAY_PER_REQUEST \
+#     --region us-east-2
