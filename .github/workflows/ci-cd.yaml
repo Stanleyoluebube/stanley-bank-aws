@@ -40,10 +40,13 @@ jobs:
       - name: terraform validate
         run: terraform validate -no-color
 
+      # - name: terraform plan
+      #   # Runs on every push — gives you a diff in CI without changing infra.
+      #   # You apply locally with `terraform apply` once you've reviewed the plan.
+      #   run: terraform plan -no-color -lock-timeout=5m -out=tfplan
+
       - name: terraform plan
-        # Runs on every push — gives you a diff in CI without changing infra.
-        # You apply locally with `terraform apply` once you've reviewed the plan.
-        run: terraform plan -no-color -out=tfplan
+        run: terraform plan -no-color -lock=false -out=tfplan
 
       - name: upload plan artifact
         uses: actions/upload-artifact@v4
